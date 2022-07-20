@@ -1,0 +1,22 @@
+{
+  "name": "queri_automation",
+  "version": "1.0.0",
+  "description": "queri_automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAmyaDhanraj97/queri_automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RAmyaDhanraj97/queri_automation/issues"
+  },
+  "homepage": "https://github.com/RAmyaDhanraj97/queri_automation#readme",
+  "devDependencies": {
+    "cypress": "^7.4.0"
+  }
+}
