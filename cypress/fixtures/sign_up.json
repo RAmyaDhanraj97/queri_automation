@@ -1,0 +1,10 @@
+{
+    "Signup":"body > div > app-header > nav > div > ul:nth-child(2) > li:nth-child(3) > a",
+    "Username":"fieldset:nth-child(1) > input",
+    "Email":"fieldset:nth-child(2) > input",
+    "Password":"fieldset:nth-child(3) > input",
+    "Sign_up_Button":"body > div > div > div > div > div > div > form > fieldset > button",
+    "Sign_in":"body > div > div > div > div > div > div > form > fieldset > button",
+    "Settings":"body > div > app-header > nav > div > ul:nth-child(3) > li:nth-child(3) > a",
+    "Logout":"body > div > div > div > div > div > div > button"
+}
