@@ -1,1 +1,16 @@
-{}
+{
+          "env": {
+          "configFile": "qa"
+        },
+        "viewportWidth": 1300,
+        "viewportHeight": 900,
+        "pageLoadTimeout": 60000,
+        "defaultCommandTimeout":25000,
+        "$schema": "https://on.cypress.io/cypress.schema.json",
+        "projectId": "zhbw9h"
+        
+  }
+      
+      
+      
+
