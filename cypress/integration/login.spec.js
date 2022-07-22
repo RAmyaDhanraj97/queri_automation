@@ -34,7 +34,7 @@ it("Follow Authors",()=>{
     loginscreen. followAuthor()
 })
 
-it("Filtering with tags",()=>{
+it.only("Filtering with tags",()=>{
     loginscreen.login_to_application()
     cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link').click()
     cy.wait(2000)
@@ -42,7 +42,7 @@ it("Filtering with tags",()=>{
 })
 
 afterEach(()=>{
-    login.logout()//function to logout from application
+    loginscreen.logout()//function to logout from application
 })
 
 
