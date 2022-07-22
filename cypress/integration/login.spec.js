@@ -7,38 +7,38 @@ describe('Login to application',()=>{
 })
 
 it("Login to application",()=>{
-    loginscreen.login_to_application()
+    loginscreen.login_to_application()//login to application
 })
 it("Invalid Login Credentials",()=>{
-    loginscreen.invalid_credentials()
+    loginscreen.invalid_credentials()//login with invalid credentials
 })
 it("Create,Delete,Edit an article",()=>{
-    loginscreen.login_to_application()
-    loginscreen.createArticle()
-    loginscreen.articleScreen()
-    loginscreen.deletecomment()
-    loginscreen.editArticle()
-    loginscreen.deleteArticle()
+    loginscreen.login_to_application()//login to application
+    loginscreen.createArticle()//create an article
+    loginscreen.articleScreen()//add comment
+    loginscreen.deletecomment()//delete added comment
+    loginscreen.editArticle()//perform edit by clicking on edit button
+    loginscreen.deleteArticle()//delete article
 })
 it("Add fav",()=>{
     loginscreen.login_to_application()
-    cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link').click()
+    cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link').click()//click on global feed
     cy.wait(4000)
-    loginscreen.favorites();
+    loginscreen.favorites();//add favorites
 
 })
 it("Follow Authors",()=>{
     loginscreen.login_to_application()
-    cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link').click()
+    cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link').click()//click on global feed
     cy.wait(2000)
-    loginscreen. followAuthor()
+    loginscreen. followAuthor()//follow author
 })
 
-it.only("Filtering with tags",()=>{
+it("Filtering with tags",()=>{
     loginscreen.login_to_application()
-    cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link').click()
+    cy.get('.feed-toggle > .nav > :nth-child(2) > .nav-link').click()//click on global feed
     cy.wait(2000)
-    loginscreen. filter_tags()
+    loginscreen. filter_tags()//perform filter actions
 })
 
 afterEach(()=>{
