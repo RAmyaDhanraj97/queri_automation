@@ -119,6 +119,20 @@ export default class LoginScreen{
             
             })
     }
+    addingcomment()
+    {
+        cy.get(':nth-child(1) > .article-preview > .preview-link > h1.ng-binding').click()
+        cy.wait(2000)
+            cy.get(loginObj.comment).type('Adding comments to the article')
+            cy.xpath(loginObj.PostComment).click()
+            cy.xpath(loginObj.AddedComment).should('be.visible')
+            cy.wait(2000)
+
+            cy.xpath(loginObj.HomeLink).click()
+            cy.get(loginObj.GlobalFeed).click()
+            cy.wait(2000)
+
+    }
 
     filter_tags()
     {
@@ -126,29 +140,33 @@ export default class LoginScreen{
         cy.xpath('/html/body/div/div/div/div[2]/div/div[2]/div/div[1]/a').each(($el)=>{
             cy.log($el.text())
         })
+
+        //implementations
             cy.get('.sidebar > .tag-list > :nth-child(1)').click()
             cy.wait(2000)
             cy.xpath(loginObj.List).should('include.text','implementations')
             cy.wait(1000)
             cy.xpath(loginObj.HeaderText).should('include.text','implementations')
-
+            this.addingcomment()
             
         
-
+            //welcome
             cy.wait(2000)
-            cy.contains('welcome').click()
-            cy.wait(1000)
+            cy.get('.sidebar > .tag-list > :nth-child(2)').click()
+            cy.wait(3000)
             cy.xpath(loginObj.List).should('include.text','welcome')
             cy.wait(1000)
             cy.xpath(loginObj.HeaderText).should('include.text','welcome')
+            this.addingcomment()
 
+        }
+
+        logout()
+        {
+            cy.get(loginObj.Settings).click()
             cy.wait(2000)
-            cy.contains('codebaseShow').click()
-            cy.wait(1000)
-            cy.xpath(loginObj.List).should('include.text','codebaseShow')
-            cy.wait(1000)
-            cy.xpath(loginObj.HeaderText).should('include.text','codebaseShow')
-
+            cy.xpath(loginObj.Logout).click()
+            cy.log("Logged out from session")
         }
 
 }
