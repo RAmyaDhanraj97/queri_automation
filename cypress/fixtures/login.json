@@ -4,7 +4,7 @@
     "Password":"body > div > div > div > div > div > div > form > fieldset > fieldset:nth-child(3) > input",
     "Sign_IN_Button":"body > div > div > div > div > div > div > form > fieldset > button",
     "Error_Message":"/html/body/div/div/div/div/div/div/list-errors/ul/div",
-    "NewArticle":"body > div > app-header > nav > div > ul:nth-child(3) > li:nth-child(2) > a",
+    "NewArticle":"/html/body/div/app-header/nav/div/ul[2]/li[2]/a",
     "ArticleTitle":" fieldset:nth-child(1) > input",
     "ArticleAbout":" fieldset:nth-child(2) > input",
     "ArticleContent":" fieldset:nth-child(3) > textarea",
@@ -25,6 +25,6 @@
     "Article_Preview":"/html/body/div/div/div/div[2]/div/div[1]/article-list/article-preview/div/article-meta/div/div/a",
     "List":"/html/body/div/div/div/div[2]/div/div[1]/article-list/article-preview/div/a/ul/li",
     "HeaderText":"/html/body/div/div/div/div[2]/div/div[1]/div/ul/li[3]/a",
-    "Settings":"body > div > app-header > nav > div > ul:nth-child(3) > li:nth-child(3) > a",
+    "Settings":"[show-authed='true'] > :nth-child(3) > .nav-link",
     "Logout":"/html/body/div/div/div/div/div/div/button" 
 }
