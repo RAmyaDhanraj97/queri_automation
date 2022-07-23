@@ -10,6 +10,7 @@ export default class LoginScreen{
         cy.get(loginObj.Email).clear().type('ramyagowda.897@gmail.com')//enetr email field
         cy.get(loginObj.Password).clear().type('Ramya@2021')//enter password field
         cy.get(loginObj.Sign_IN_Button).click();//click on signin button
+        cy.log('**Successfully logged in to application**')
     }
     invalid_credentials()
     {
@@ -19,16 +20,18 @@ export default class LoginScreen{
         cy.get(loginObj.Password).clear().type('Reya@2021')//enter incorrect password
         cy.get(loginObj.Sign_IN_Button).click();//click on signin button
         cy.xpath(loginObj.Error_Message).contains('email or password is invalid').should('be.visible')//validate error message
+        cy.log('**Couldnt login as the credentials were invalid**')
     }
     createArticle()
     {
-        cy.get(loginObj.NewArticle).click()//click on New Article button
+        cy.xpath(loginObj.NewArticle).click()//click on New Article button
         cy.title().should('be.eq','Editor — Conduit');//verify the title of the page
         cy.get(loginObj.ArticleTitle).type("Cypress Automation is in trend")//enter title of the article
         cy.get(loginObj.ArticleAbout).type("Cypress is a testing tool for modern web application")//enter article about info
         cy.get(loginObj.ArticleContent).type("Cypress is a testing tool for a modern web application,it uses javascript as a programming language")//enter article content
         cy.get(loginObj.Tags).type('Cypress')//enter tag
         cy.get(loginObj.PublishArticle).should('be.enabled').click()//click on publish article button
+        cy.log('**Article created successfully**')
     }
     articleScreen()
     {
@@ -39,12 +42,14 @@ export default class LoginScreen{
         cy.get(loginObj.comment).type("Cypress testing")//enter comment for the article
         cy.xpath(loginObj.PostComment).click()//post the added comment,click on post comment button
         cy.xpath(loginObj.AddedComment).should('be.visible')//added comment should be visible
+        cy.log('**Comment added  successfully**')
     }
     deletecomment()
     {
         cy.xpath(loginObj.DeleteComment).click()//click on Delete icon to delete comment
         cy.log("Comment Deleted")
         cy.get('div.card').should('not.exist')//verifying the comment box after delete,it should not exist
+        cy.log('**Comment deleted successfully**')
     }
     editArticle()
     {
@@ -54,11 +59,12 @@ export default class LoginScreen{
         cy.get(loginObj.ArticleTitle).clear().type("Cypress Automation is booming technology")//edit article title
         cy.get(loginObj.PublishArticle).should('be.enabled').click()//click pm publish article button
         cy.get('h1.ng-binding').should('have.text',"Cypress Automation is booming technology")//afer editing the title of the article should be changed.
+        cy.log('**Edited article and verified article header after edit**')
     }
     deleteArticle()
     {
         cy.xpath(loginObj.DeleteArticle).click()//click on delete article icon
-        cy.log("Article Delted Successfully")
+        cy.log('**Article Delted Successfully**')
         cy.title().should('be.eq',"Home — Conduit")//after delete screen should navigate to Home screen.
     }
     favorites()

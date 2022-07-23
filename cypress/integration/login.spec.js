@@ -11,9 +11,11 @@ it("Login to application",()=>{
 })
 it("Invalid Login Credentials",()=>{
     loginscreen.invalid_credentials()//login with invalid credentials
+    loginscreen.login_to_application()
 })
 it("Create,Delete,Edit an article",()=>{
     loginscreen.login_to_application()//login to application
+    cy.wait(2000)
     loginscreen.createArticle()//create an article
     loginscreen.articleScreen()//add comment
     loginscreen.deletecomment()//delete added comment
